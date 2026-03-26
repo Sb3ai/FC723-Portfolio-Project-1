@@ -31,3 +31,7 @@ except ValueError: # This expects errors especially "ValueError" if the value is
 else:
     code = Find_gcd(number_1, number_2) # Fetching the GCD
     print(f"The GCD is >> {code}")  # Displaying the GCD here
+    if code == 1:
+        print("the numbers are prime numbers")
+    else:
+        print("the numbers arent prime numbers")
