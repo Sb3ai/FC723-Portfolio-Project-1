@@ -6,18 +6,28 @@ Created on Thu Mar 26 14:59:35 2026
 @author: bu3li
 """
 
-def find_GCD(Num1,Num2): # Function with 2 args, Num1 and Num2 to caluclate the Euclidean algorthim
+def Find_gcd(num1,num2): # Function with 2 args, Num1 and Num2 to caluclate the Euclidean algorthim
      # Looping through the code until the Num2 is equal to 0
-    while Num2 != 0:
-        reminader = Num1 % Num2 # Here is where we calculate the reminader 
-        Num1 = Num2  # We switch here from Num1 to Num2
-        Num2 = reminader # and here from Num2 to remainder
-    return Num1 # Returning GCD 
+    while num2 != 0:
+        reminader = num1 % num2 # Here is where we calculate the reminader 
+        num1 = num2  # We switch here from Num1 to Num2
+        num2 = reminader # and here from Num2 to remainder
+    return num1 # Returning GCD 
 
 
-# Random valued variables
-n1 = 12
-n2 = 4
 
-code = find_GCD(n1, n2) # Fetching the GCD
-print(f"The GCD is >> {code}")  # Displaying the GCD here
+try: # Error handling
+    
+    # local inputs asked by user for first and second number MAKING them integers
+    number_1 = int(input("Enter a first number >> "))
+    number_2 = int(input("Enter a second number >> "))
+
+    if number_1 <= 0 or number_2 <= 0: # If statement that detects whether the input is positive or negative
+        print("Please enter a positive number !") # If negative prints out this
+        exit() # And exists out from here.
+except ValueError: # This expects errors especially "ValueError" if the value is not an integer rather a string it would detect it
+    print("Please enter a valid number value.") # And then print it out
+    exit() # THen exists!
+else:
+    code = Find_gcd(number_1, number_2) # Fetching the GCD
+    print(f"The GCD is >> {code}")  # Displaying the GCD here
